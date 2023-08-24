@@ -7,7 +7,7 @@
     let marker = {
         lat: data.lat,
         lng: data.lng,
-        text: "You are here",
+        text: "คุณอยู่ที่นี่",
         navigate:"/"
     }
 

@@ -9,11 +9,12 @@
 	let marker = {
 		lat: 51.505,
 		lng: -0.09,
-		text: 'You are here',
-		navigate: '/whereami'
+		text: 'คุณอยู่ที่นี่',
+		navigate: '/'
 	};
 	let km = 4;
 	let change = false;
+	let baseurl = '';
 	onMount(() => {
 		if (navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(
@@ -29,6 +30,9 @@
 		} else {
 			console.log('Geolocation is not supported by this browser.');
 		}
+
+		baseurl = window.location.href;
+		console.log(baseurl);
 	});
 
 	const getLocationName = async () => {
@@ -41,7 +45,19 @@
 				return data[0].display_name;
 			});
 	};
+
+	
+	
 </script>
+
+<svelte:head>
+	<title>What is my {km} KM area?</title>
+	<meta name="description" content="What is my {km} KM area?" />
+	<meta property="og:title" content="What is my {km} KM area?" />
+	<meta property="og:description" content="What is my {km} KM area?" />
+	<meta property="og:image" content="https://4km.iamickdev.com/ickicon.png" />
+	<meta property="og:url" content="https://4km.iamickdev.com" />
+</svelte:head>
 
 <main class="bg-neutral">
 	<h1 class="text-center text-2xl font-bold text-white py-5">

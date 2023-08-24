@@ -172,7 +172,7 @@
 			type="text"
 			name="searchbox"
 			id="searchbox"
-			class="w-full bg-blue-200 px-4 py-4"
+			class="w-full bg-blue-200 px-4 py-4 text-black rounded-none"
 			on:change={(e) => searchGeoLocationBytext(e.target.value)}
 			bind:value={searchTerm}
 			placeholder="ค้นหาตำแหน่งที่ต้องการที่นี่!"
